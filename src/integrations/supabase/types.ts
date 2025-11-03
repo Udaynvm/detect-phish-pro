@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      url_checks: {
+        Row: {
+          checked_at: string
+          confidence: number
+          id: string
+          reasons: Json | null
+          url: string
+          verdict: string
+        }
+        Insert: {
+          checked_at?: string
+          confidence: number
+          id?: string
+          reasons?: Json | null
+          url: string
+          verdict: string
+        }
+        Update: {
+          checked_at?: string
+          confidence?: number
+          id?: string
+          reasons?: Json | null
+          url?: string
+          verdict?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
